@@ -4,8 +4,10 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import TextInput from "../../components/PastExamForm/TextInput";
 import FileInput from "../../components/PastExamForm/FileInput";
 import { onUploadPastExam } from "../../firebase/pastexam";
+import { useNavigate } from "react-router-dom";
 
 const NewPastExamForm = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -18,6 +20,7 @@ const NewPastExamForm = () => {
   ): Promise<void> => {
     event?.preventDefault();
     await onUploadPastExam(data);
+    navigate("/");
   };
 
   return (
