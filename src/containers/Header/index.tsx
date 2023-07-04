@@ -1,8 +1,5 @@
-import React from "react";
 import Logo from "../../components/Logo";
 import SignOut from "../SignOut";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../../firebase/auth";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 

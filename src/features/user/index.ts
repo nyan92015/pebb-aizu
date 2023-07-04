@@ -1,7 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { User } from "firebase/auth";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../../firebase/auth";
 
 interface UserState {
   userData: User | null | undefined;

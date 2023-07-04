@@ -1,11 +1,11 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { UserData } from "../../types.ts/UserData";
 import { signinWithEmailAndPassword } from "../../firebase/auth";
-import EmailInput from "../../components/EmailInput";
-import PasswordInput from "../../components/PasswordInput.tsx";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setUser } from "../../features/user";
+import EmailInput from "../../components/UserForm/EmailInput";
+import PasswordInput from "../../components/UserForm/PasswordInput";
 
 const SignIn = () => {
   const navigate = useNavigate();

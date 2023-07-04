@@ -2,12 +2,12 @@ import { useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { UserData } from "../../types.ts/UserData";
 import { signupWithEmailAndPassword } from "../../firebase/auth";
-import NameInput from "../../components/NameInput.tsx";
-import EmailInput from "../../components/EmailInput";
-import PasswordInput from "../../components/PasswordInput.tsx";
 import { SetDisplayName } from "../../firebase/user";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../features/user";
+import NameInput from "../../components/UserForm/NameInput";
+import EmailInput from "../../components/UserForm/EmailInput";
+import PasswordInput from "../../components/UserForm/PasswordInput";
 
 const SignUp = () => {
   const navigate = useNavigate();

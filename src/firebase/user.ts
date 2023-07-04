@@ -4,7 +4,6 @@ import {
   updateProfile,
   User,
 } from "firebase/auth";
-import { auth } from "./auth";
 
 //名前を設定する関数
 export const SetDisplayName = async (user: User, displayName: string) => {
