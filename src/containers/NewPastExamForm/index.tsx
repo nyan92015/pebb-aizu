@@ -18,7 +18,6 @@ const NewPastExamForm = () => {
     data: PastExamData,
     event
   ): Promise<void> => {
-    event?.preventDefault();
     await onUploadPastExam(data);
     navigate("/");
   };
