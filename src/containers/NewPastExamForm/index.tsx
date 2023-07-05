@@ -5,6 +5,7 @@ import TextInput from "../../components/PastExamForm/TextInput";
 import FileInput from "../../components/PastExamForm/FileInput";
 import { onUploadPastExam } from "../../firebase/pastexam";
 import { useNavigate } from "react-router-dom";
+import { submitMail } from "../../emailjs/send";
 
 const NewPastExamForm = () => {
   const navigate = useNavigate();
@@ -18,7 +19,8 @@ const NewPastExamForm = () => {
     data: PastExamData,
     event
   ): Promise<void> => {
-    await onUploadPastExam(data);
+    event?.preventDefault();
+    await submitMail(data);
     navigate("/");
   };
 
