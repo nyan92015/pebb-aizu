@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { setUser } from "../../features/user";
 import EmailInput from "../../components/UserForm/EmailInput";
 import PasswordInput from "../../components/UserForm/PasswordInput";
+import "./SignIn.scss";
 
 const SignIn = () => {
   const navigate = useNavigate();
