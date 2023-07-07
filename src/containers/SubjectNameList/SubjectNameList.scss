@@ -1,0 +1,28 @@
+
+.subject-name-list{
+  list-style: none;
+  display: flex;
+	list-style: none;
+  &__subject-name{
+    display: block;
+    padding-bottom: 0;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0 #bbb;
+    transition: background-color .25s;
+    transition: box-shadow .25s;
+    margin: 15px;
+    &__link{
+      margin: 0;
+      color: #fff;
+      font-weight: bold;
+      font-size: 50px;
+      text-decoration: none;
+    }
+    
+  }
+  &__subject-name:hover{
+    background-color: #dcdcdc;
+    box-shadow: 0 0 0 #bbb;
+  }
+}

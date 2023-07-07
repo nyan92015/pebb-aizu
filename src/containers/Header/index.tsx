@@ -5,10 +5,9 @@ import { RootState } from "../../store";
 import "./Header.scss";
 const Header = () => {
   const user = useSelector((state: RootState) => state.user.userData);
-
   return (
     <div className="header">
-      <Logo />
+        <Logo />
       <p>{user?.displayName}</p>
       {user?.emailVerified && <SignOut />}
     </div>
