@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getPastExamList } from "../../firebase/pastexam";
 import { PastExamData } from "../../types.ts/PastExamData";
-import PastExamList from "../../containers/PastExamList.tsx";
+import PastExamList from "../../containers/PastExamList";
 import LoadingPage from "../LoadingPage";
 
 const PastExamListPage = () => {

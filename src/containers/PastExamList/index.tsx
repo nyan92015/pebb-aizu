@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const PastExamList: React.FC<{ pastExamList: PastExamData[] }> = ({
   pastExamList,
 }) => {
-  console.log(pastExamList);
   return (
     <ul>
       {pastExamList.map((pastexam: PastExamData, index: number) => (
