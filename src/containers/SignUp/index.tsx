@@ -35,11 +35,7 @@ const SignUp = () => {
   };
 
   return (
-    <form
-      className="signup__form"
-      data-testid="form"
-      onSubmit={handleSubmit(onSignUp)}
-    >
+    <form className="signup__form" onSubmit={handleSubmit(onSignUp)}>
       <NameInput register={register} errors={errors} />
       <EmailInput register={register} errors={errors} />
       <PasswordInput register={register} errors={errors} />
