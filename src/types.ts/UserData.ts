@@ -1,5 +1,9 @@
+import { User } from "firebase/auth";
+
 export type UserData = {
-  name?: string;
-  email: string;
-  password: string;
+  isLoading: boolean;
+  user: User | null | undefined;
+  name?: string | null | undefined;
+  email?: string | null | undefined;
+  password?: string | null | undefined;
 };
