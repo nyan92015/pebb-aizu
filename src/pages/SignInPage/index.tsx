@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import SignIn from "../../containers/SignIn";
 import { Link, Navigate, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store";
+import LoadingPage from "../LoadingPage";
+import { UserContext } from "../../App";
 
 const SignInPage = () => {
-  const user = useSelector((state: RootState) => state.user.userData);
-  if (user?.emailVerified) return <Navigate to="/" />;
+  const userData = useContext(UserContext);
+  if (userData.isLoading) return <LoadingPage />;
+  if (userData.user?.emailVerified) return <Navigate to="/" />;
   return (
     <div className="Signin">
       <h1 className="Signin__title">サインイン</h1>

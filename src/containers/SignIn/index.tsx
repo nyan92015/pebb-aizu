@@ -2,15 +2,12 @@ import { useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { UserData } from "../../types.ts/UserData";
 import { signinWithEmailAndPassword } from "../../firebase/auth";
-import { useDispatch } from "react-redux";
-import { setUser } from "../../features/user";
 import EmailInput from "../../components/UserForm/EmailInput";
 import PasswordInput from "../../components/UserForm/PasswordInput";
 import "./SignIn.scss";
 
 const SignIn = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const {
     register,
@@ -19,15 +16,13 @@ const SignIn = () => {
   } = useForm<UserData>();
 
   const onSignIn: SubmitHandler<UserData> = async (
-    data: UserData,
+    data,
     event
   ): Promise<void> => {
     event?.preventDefault();
-    const userCredential = await signinWithEmailAndPassword(
-      data.email,
-      data.password
-    );
-    dispatch(setUser(userCredential?.user));
+    if (data.email && data.password) {
+      await signinWithEmailAndPassword(data.email, data.password);
+    }
     navigate("/");
   };
 
